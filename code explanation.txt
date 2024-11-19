@@ -1,0 +1,22 @@
+Explanation of Key Sections:
+Imports:
+
+Libraries like cv2, mediapipe, math, numpy, and screen_brightness_control are imported to handle video, hand detection, distance calculation, interpolation, and brightness adjustment, respectively.
+Hand Detection Model:
+
+The mp.solutions.hands class initializes the Mediapipe hand detection model, with parameters for tracking confidence, detection confidence, and maximum hands.
+Video Capture:
+
+The cv2.VideoCapture(0) object starts video streaming from the default webcam.
+Frame Processing:
+
+The frame is flipped for a natural mirror view and converted to RGB for Mediapipe processing.
+Landmark Detection:
+
+Mediapipe detects landmarks for each hand in the frame, and their pixel coordinates are calculated relative to the frame size.
+Brightness Control:
+
+The distance between the thumb and index finger is calculated using the hypot function, and the brightness level is mapped to a range of 0-100 using np.interp.
+Display and Exit:
+
+The processed frame is displayed using cv2.imshow. Pressing 'q' exits the loop, releases the webcam, and closes all OpenCV windows.
